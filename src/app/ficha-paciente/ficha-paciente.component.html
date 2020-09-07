@@ -1,0 +1,185 @@
+<!-- Parte do Nome Paciente
+  cyan lighten-2"
+  -->
+
+<!--
+
+    <nav>
+  <div class="nav-wrapper z-depth-1">
+    <a href="" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down ">
+      <li><a href="">sass</a></li>
+      <li><a href="">sass <span class="new badge">4</span></a></li>
+      <li><a href="">sass</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+-->
+<div id="blue" class="block blue navbar-fixed">
+    <nav class="pushpin-demo-nav pinned" data-target="blue" style="top: 0px;">
+      <div class="nav-wrapper light-blue">
+        <div class="container">
+          <a href="#" class="brand-logo fonte-externa blue-text">
+            <span class="fonte-externa-tamanho">m</span>Y <span class="hMaior">H</span>ERO </a>
+  
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  
+  
+  <form class="col s12 block blue formulario">
+    <div class="container">
+  
+  
+      <!-- AVATAR-->
+  
+  
+      <div class="center-align">
+        <img class="circle col s12 l12 imgResolucao" src="https://image.flaticon.com/icons/svg/3011/3011270.svg"
+          alt="Contact Person">
+      </div>
+      <!---->
+  
+      <div class="row">
+  
+  
+        <div class="input-field col s12 l4">
+          <i class="material-icons prefix red-text text-darken-2">assignment_ind</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.nome}} readonly>
+        </div>
+  
+            <!--Idade-->
+            <div class="input-field col s12 l4">
+              <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+              <input id="icon_prefix" type="text" value="Masculino" readonly>
+            </div>
+  
+             <!--Idade-->
+        <div class="input-field col s6 l4">
+          <i class="material-icons prefix red-text text-darken-2">calendar_today</i>
+          <input id="icon_prefix" type="text" value="25 anos" readonly>
+        </div>
+    
+        <!--Idade-->
+        <div class="input-field col s6 l4">
+          <i class="material-icons prefix red-text text-darken-2">calendar_today</i>
+          <input id="icon_prefix" type="text" value="{{fichaPaciente?.nascimento}}" readonly>
+        </div>
+    
+        <!--Idade-->
+        <div class="input-field col s6">
+          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.peso}} readonly>
+        </div>
+        <!--Idade-->
+        <div class="input-field col s6">
+          <i class="material-icons prefix red-text text-darken-2">height</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.altura}} readonly>
+        </div>
+        <!--Idade-->
+        <div class="input-field col s6">
+          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.tipoSanguinio}} readonly>
+        </div>
+        <!--Idade-->
+        <div class="input-field col s6">
+          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.doadorDeOrgao}} readonly>
+        </div>
+  
+        <!--Idade-->
+        <div class="input-field col s12">
+          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.estadoMoradia}} readonly>
+        </div>
+        <!--Idade-->
+        <div class="input-field col s12">
+          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <input id="icon_prefix" type="text" value={{fichaPaciente?.telefone}} readonly>
+        </div>
+        <!--ARRAYS-->
+      </div>
+      <ul class="collapsible col s12">
+        <li>
+          <div class="collapsible-header red"><i class="material-icons white-text">filter_drama</i>CONTATOS DE EMERGÊNCIA</div>
+  
+          <!-- CONTAOS DE EMERENGIAS-->
+  
+          <!---->
+          <div class="collapsible-body"><span>
+  
+              <ul class="collection">
+                <li class="collection-item avatar" *ngFor="let contatoDeEmergencia of contatoDeEmergencias">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Google_Contacts_logo.png" alt=""
+                    class="circle">
+                  <span class="title">{{contatoDeEmergencia.paretesco}}</span>
+                  <p>{{contatoDeEmergencia.nome}}<br>
+                    <a href={{contatoDeEmergencia.numero}}>{{contatoDeEmergencia.numero}}</a>
+                  </p>
+                </li>
+              </ul>
+            </span></div>
+        </li>
+        <li>
+          <div class="collapsible-header red" ><i class="material-icons white-text">place</i>DOENÇAS</div>
+          <div class="collapsible-body"><span>
+            
+            <table >     
+              <tbody *ngFor="let doenca of doencas"> 
+                <tr>
+                  <td>{{doenca.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+  
+          </span></div>
+        </li>
+        <li>
+          <div class="collapsible-header red "><i class="material-icons white-text">whatshot</i>ALERGIAS</div>
+          <div class="collapsible-body"><span>
+            
+            <table>     
+              <tbody *ngFor="let alergia of alergias"> 
+                <tr>
+                  <td >{{alergia.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+  
+          </span></div>
+        </li>
+        <li>
+          <div class="collapsible-header red "><i class="material-icons white-text">whatshot</i>MEDICAMENTOS</div>
+          <div class="collapsible-body"><span>
+  
+            <table>     
+              <tbody *ngFor="let medicamento of medicamentos"> 
+                <tr>
+                  <td>{{medicamento.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+  
+          </span></div>
+        </li>
+      </ul>
+  
+    </div>
+  
+    <footer class="page-footer blue">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+      <div class="footer-copyright blue darken-1">
+        <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+  
+  </form>

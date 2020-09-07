@@ -1,0 +1,76 @@
+hr { background-color: red; height: 1px; border: 0; }
+
+
+label {
+ 
+    color: #f11111;
+}
+
+material-icons{
+    position: relative;
+    left:  10.75rem;
+}
+
+
+ input[type=text]:not(.browser-default) {
+    border-bottom: 2px solid #1e88e5   ;
+    color: #fff;
+}
+
+html, body, .block {
+    height: 100%;
+}
+.test {
+    color:red;
+    background-color: blueviolet;
+}
+
+.formulario{
+    padding-top: 90px;
+}
+
+/*
+@font-face {
+    font-family: Avenge;
+    src:url('fontes/AVENGEANCE04.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+
+}
+
+@font-face{
+    font-family: Roboto;
+    src:url('fontes/roboto/Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+
+
+.fonte-externa {
+    font-family: Avenge;
+    font-size: 40px;
+}
+
+.fonte-externa-tamanho{
+    font-size: 56px;
+}
+
+*/
+.hMaior{
+    font-size: 42px;
+}
+
+input{
+    font-family: Roboto;
+}
+
+.imgResolucao {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+
+    
+}
