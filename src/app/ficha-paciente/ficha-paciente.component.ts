@@ -1,5 +1,5 @@
+import { FichaPacienteDTO } from './../../models/DTO/FichaPaciente.dto';
 import { PacienteService } from './../../services/paciente.service';
-import { PacienteDTO } from './../../models/DTO/Paciente.dto';
 import { Component, OnInit } from '@angular/core';
 import { Medicamento } from 'src/models/Medicamento';
 import { Doenca } from 'src/models/Doenca';
@@ -13,7 +13,7 @@ import { ContatosDeEmergencia } from 'src/models/ContatosDeEmergencia';
 })
 export class FichaPacienteComponent implements OnInit {
  
-  public fichaPaciente : PacienteDTO;
+  public fichaPaciente : FichaPacienteDTO;
 
   public medicamentos: Medicamento[];
   public doencas : Doenca[];

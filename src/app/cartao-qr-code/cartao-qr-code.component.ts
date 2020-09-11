@@ -1,8 +1,10 @@
+import { CartaoQrCode } from './../../models/DTO/CartaoQrCode';
 import { Component, OnInit } from '@angular/core';
 
 
 import { PdfMakeWrapper, Img , Canvas , Rect ,Table , QR , Columns , Txt}  from 'pdfmake-wrapper';
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import { PacienteService } from 'src/services/paciente.service';
 
 @Component({
   selector: 'app-cartao-qr-code',
@@ -11,17 +13,31 @@ import pdfFonts from "pdfmake/build/vfs_fonts";
 })
 export class CartaoQrCodeComponent implements OnInit {
 
+  public cartaoQrCode : CartaoQrCode;
+
   private red: string = '#f80303';
-  private blue: string = '#00abb7';
-  private black: string = '#000800';
-  private brown: string = '#5b2300';
-  private skin: string = '#ffb971';
+  //private blue: string = '#00abb7';
+  //private black: string = '#000800';
+  //private brown: string = '#5b2300';
+  //private skin: string = '#ffb971';
 
   private codigoDoPaciente : string = "0544ddwd-fdsd";
 
-  constructor() { }
+  constructor(public pacienteService: PacienteService) { }
 
   ngOnInit(): void {
+
+    this.pacienteService.gerarQrCode()
+    .subscribe(reponse => {
+      this.cartaoQrCode = reponse;
+     
+     
+ 
+      console.log(this.cartaoQrCode)
+      },
+      error => {
+        console.log(error);
+      });
   }
 
     
@@ -63,7 +79,7 @@ pdf.add(
 );
 
 pdf.add(
-  new QR(`http://myhero.com.br/${this.codigoDoPaciente}`).fit(100).alignment('center').end
+  new QR(`http://myhero.com.br/${this.cartaoQrCode.codigoGeradoPeloSistema}`).fit(100).alignment('center').end
 )
 
 pdf.add(
@@ -71,11 +87,11 @@ pdf.add(
 );
 
 pdf.add(
-  new Columns([ 'Ariel L. De S. M. S. So. D. S' ]).columnGap(10).alignment('center').fontSize(12)
+  new Columns([ this.cartaoQrCode.nome ]).columnGap(10).alignment('center').fontSize(12)
                 .bold().color(this.red).end
   );
   pdf.add(
-    new Columns([ 'Masculino' ]).columnGap(10).alignment('center').fontSize(10).bold().end
+    new Columns([ this.cartaoQrCode.sexo ]).columnGap(10).alignment('center').fontSize(10).bold().end
     );
 
 
