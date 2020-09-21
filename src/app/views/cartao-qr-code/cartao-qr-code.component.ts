@@ -1,4 +1,4 @@
-import { CartaoQrCode } from './../../models/DTO/CartaoQrCode';
+import { CartaoQrCode } from './../../../models/DTO/CartaoQrCode';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -67,7 +67,7 @@ pdf.pageSize('A4');
 
 PdfMakeWrapper.setFonts(pdfFonts);
 
-pdf.add( await new Img('assets/cartaoFrente.png').alignment('center').build() );
+pdf.add( await new Img('assets/logoFrente.png').fit([250,250]).alignment('center').build() ); //fit([50,150]) ADICIONAR TAMANHO DA IMAGEM
 
 
 

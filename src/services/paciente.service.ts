@@ -15,6 +15,8 @@ export class PacienteService {
 
   fichaDoPaciente() : Observable<FichaPacienteDTO> {
     var numeroFichaPaciente : string = window.location.href;
+
+    alert("TESTE" + numeroFichaPaciente);
     return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/XTR700`);
   }
 

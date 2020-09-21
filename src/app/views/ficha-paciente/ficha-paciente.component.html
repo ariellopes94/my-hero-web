@@ -16,9 +16,10 @@
 </nav>
  
 -->
-<div id="blue" class="block blue navbar-fixed">
-    <nav class="pushpin-demo-nav pinned" data-target="blue" style="top: 0px;">
-      <div class="nav-wrapper light-blue">
+
+<div id="blue" class="block blue">
+    <nav  data-target="blue" style="top: 0px;">
+      <div class="nav-wrapper light-blue z-depth-1">
         <div class="container">
           <a href="#" class="brand-logo fonte-externa blue-text">
             <span class="fonte-externa-tamanho">m</span>Y <span class="hMaior">H</span>ERO </a>
@@ -28,8 +29,19 @@
     </nav>
   </div>
   
-  
-  
+<!--
+
+<nav>
+  <div class="nav-wrapper light-blue container">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+-->
   <form class="col s12 block blue formulario">
     <div class="container">
   
@@ -47,64 +59,64 @@
   
   
         <div class="input-field col s12 l4">
-          <i class="material-icons prefix red-text text-darken-2">assignment_ind</i>
+          <i class="material-icons prefix green-text text-darken-4">assignment_ind</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.nome}} readonly>
         </div>
   
             <!--Idade-->
             <div class="input-field col s12 l4">
-              <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+              <i class="material-icons prefix green-text text-darken-4">account_circle</i>
               <input id="icon_prefix" type="text" value={{fichaPaciente?.sexo}}  readonly>
             </div>
   
              <!--Idade-->
         <div class="input-field col s6 l4">
-          <i class="material-icons prefix red-text text-darken-2">calendar_today</i>
+          <i class="material-icons prefix green-text text-darken-4">calendar_today</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.idade}} readonly>
         </div>
     
         <!--Idade-->
         <div class="input-field col s6 l4">
-          <i class="material-icons prefix red-text text-darken-2">calendar_today</i>
+          <i class="material-icons prefix green-text text-darken-4">calendar_today</i>
           <input id="icon_prefix" type="text" value="{{fichaPaciente?.nascimento}}" readonly>
         </div>
     
         <!--Idade-->
         <div class="input-field col s6">
-          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <i class="material-icons prefix green-text text-darken-4">account_circle</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.peso}} readonly>
         </div>
         <!--Idade-->
         <div class="input-field col s6">
-          <i class="material-icons prefix red-text text-darken-2">height</i>
+          <i class="material-icons prefix green-text text-darken-4">height</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.altura}} readonly>
         </div>
         <!--Idade-->
         <div class="input-field col s6">
-          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <i class="material-icons prefix green-text text-darken-4">account_circle</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.tipoSanguinio}} readonly>
         </div>
         <!--Idade-->
         <div class="input-field col s6">
-          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <i class="material-icons prefix green-text text-darken-4">account_circle</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.doadorDeOrgao}} readonly>
         </div>
   
         <!--Idade-->
         <div class="input-field col s12">
-          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <i class="material-icons prefix green-text text-darken-4">account_circle</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.estadoMoradia}} readonly>
         </div>
         <!--Idade-->
         <div class="input-field col s12">
-          <i class="material-icons prefix red-text text-darken-2">account_circle</i>
+          <i class="material-icons prefix green-text text-darken-4">account_circle</i>
           <input id="icon_prefix" type="text" value={{fichaPaciente?.telefone}} readonly>
         </div>
         <!--ARRAYS-->
       </div>
       <ul class="collapsible col s12">
         <li>
-          <div class="collapsible-header red"><i class="material-icons white-text">filter_drama</i>CONTATOS DE EMERGÊNCIA</div>
+          <div class="collapsible-header coresCollapsible"><i class="material-icons white-text">filter_drama</i>CONTATOS DE EMERGÊNCIA</div>
   
           <!-- CONTAOS DE EMERENGIAS-->
   
@@ -124,7 +136,7 @@
             </span></div>
         </li>
         <li>
-          <div class="collapsible-header red" ><i class="material-icons white-text">place</i>DOENÇAS</div>
+          <div class="collapsible-header coresCollapsible" ><i class="material-icons white-text">place</i>DOENÇAS</div>
           <div class="collapsible-body"><span>
             
             <table >     
@@ -138,7 +150,7 @@
           </span></div>
         </li>
         <li>
-          <div class="collapsible-header red "><i class="material-icons white-text">whatshot</i>ALERGIAS</div>
+          <div class="collapsible-header coresCollapsible "><i class="material-icons white-text">whatshot</i>ALERGIAS</div>
           <div class="collapsible-body"><span>
             
             <table>     
@@ -152,7 +164,7 @@
           </span></div>
         </li>
         <li>
-          <div class="collapsible-header red "><i class="material-icons white-text">whatshot</i>MEDICAMENTOS</div>
+          <div class="collapsible-header coresCollapsible "><i class="material-icons white-text">whatshot</i>MEDICAMENTOS</div>
           <div class="collapsible-body"><span>
   
             <table>     

@@ -58,6 +58,10 @@ html, body, .block {
 }
 
 */
+.coresCollapsible {
+    background-color: #7aa701 !important;
+}
+
 .hMaior{
     font-size: 42px;
 }

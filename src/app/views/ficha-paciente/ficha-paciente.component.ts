@@ -1,6 +1,8 @@
-import { FichaPacienteDTO } from './../../models/DTO/FichaPaciente.dto';
-import { PacienteService } from './../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
+
+import { PacienteService } from 'src/services/paciente.service';
+import { FichaPacienteDTO } from './../../../models/DTO/FichaPaciente.dto';
+
 import { Medicamento } from 'src/models/Medicamento';
 import { Doenca } from 'src/models/Doenca';
 import { Alergia } from 'src/models/Alergia';
