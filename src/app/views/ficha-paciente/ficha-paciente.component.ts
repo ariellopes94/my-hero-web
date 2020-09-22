@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PacienteService } from 'src/services/paciente.service';
-import { FichaPacienteDTO } from './../../../models/DTO/FichaPaciente.dto';
+import { FichaPacienteDTO } from '../../../models/DTO/fichaPaciente.dto';
 
-import { Medicamento } from 'src/models/Medicamento';
-import { Doenca } from 'src/models/Doenca';
-import { Alergia } from 'src/models/Alergia';
-import { ContatosDeEmergencia } from 'src/models/ContatosDeEmergencia';
+import { Medicamento } from 'src/models/medicamento.model';
+import { Doenca } from 'src/models/doenca.model';
+import { Alergia } from 'src/models/alergia.model';
+import { ContatoDeEmergencia } from 'src/models/contatoDeEmergencia.model';
 
 @Component({
   selector: 'app-ficha-paciente',
@@ -20,9 +20,9 @@ export class FichaPacienteComponent implements OnInit {
   public medicamentos: Medicamento[];
   public doencas : Doenca[];
   public alergias : Alergia[];
-  public contatoDeEmergencias : ContatosDeEmergencia[];
+  public contatoDeEmergencias : ContatoDeEmergencia[];
   
-  constructor(public pacienteService: PacienteService) { }
+  constructor(private pacienteService: PacienteService) { }
 
   ngOnInit(): void {
 

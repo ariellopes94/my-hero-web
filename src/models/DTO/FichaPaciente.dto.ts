@@ -1,7 +1,8 @@
-import { Medicamento } from '../Medicamento';
-import { Doenca } from '../Doenca';
-import { Alergia } from '../Alergia';
-import { ContatosDeEmergencia } from '../ContatosDeEmergencia';
+
+import { Medicamento } from '../medicamento.model';
+import { Doenca } from '../doenca.model';
+import { Alergia } from '../alergia.model';
+import { ContatoDeEmergencia } from '../contatoDeEmergencia.model';
 export interface FichaPacienteDTO {
 
     id: string;
@@ -18,7 +19,7 @@ export interface FichaPacienteDTO {
     observacao: string;
 
     alergias: Alergia[];
-    contatosDeEmergencias: ContatosDeEmergencia[];
+    contatosDeEmergencias: ContatoDeEmergencia[];
     doencas: Doenca[];
     medicamentos: Medicamento[];
 }

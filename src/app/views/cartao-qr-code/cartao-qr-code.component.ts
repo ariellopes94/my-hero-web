@@ -1,4 +1,4 @@
-import { CartaoQrCode } from './../../../models/DTO/CartaoQrCode';
+import { CartaoQrCode } from '../../../models/DTO/cartaoQrCode.dto';
 import { Component, OnInit } from '@angular/core';
 
 

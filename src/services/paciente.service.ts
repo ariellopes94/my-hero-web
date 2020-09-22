@@ -1,5 +1,6 @@
-import { CartaoQrCode } from './../models/DTO/CartaoQrCode';
-import { FichaPacienteDTO } from './../models/DTO/FichaPaciente.dto';
+import { Paciente } from './../models/paciente';
+import { CartaoQrCode } from '../models/DTO/cartaoQrCode.dto';
+import { FichaPacienteDTO } from '../models/DTO/fichaPaciente.dto';
 import { Injectable } from '@angular/core';
 
 import { API_CONFIG } from '../config/api.config';
@@ -13,14 +14,18 @@ export class PacienteService {
 
   constructor( public http: HttpClient ) { }
 
-  fichaDoPaciente() : Observable<FichaPacienteDTO> {
+  create(paciente: Paciente): Observable<Paciente>{
+    return this.http.post<Paciente>(`${API_CONFIG.baseUrl}/pacientes`, paciente);
+  }
+
+  fichaDoPaciente(): Observable<FichaPacienteDTO> {
     var numeroFichaPaciente : string = window.location.href;
 
     alert("TESTE" + numeroFichaPaciente);
-    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/XTR700`);
+    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/5feddc03AHMy-HERO-af26AHMy-HERO-44aaAHMy-HERO-988fAHMy-HERO-b4b81991fee6`);
   }
 
-  gerarQrCode() : Observable<CartaoQrCode> {
+  gerarQrCode(): Observable<CartaoQrCode> {
 
     return this.http.get<CartaoQrCode>(`${API_CONFIG.baseUrl}/pacientes/gerarCodigoQrCode/41894941004`);
   }

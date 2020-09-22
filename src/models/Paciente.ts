@@ -1,9 +1,12 @@
-import { Medicamento } from './Medicamento';
-import { ContatoDeEmergencia } from './ContatoDeEmergencia';
-import { Alergia } from './Alergia';
-import { Doenca } from './Doenca';
+import { Alergia } from './alergia.model';
+import { Medicamento } from './medicamento.model';
+import { ContatoDeEmergencia } from './contatoDeEmergencia.model';
+
+import { Doenca } from './doenca.model';
+
 export interface Paciente{
 
+    id?: number;
     cpf: string;
     nome: string;
     email: string;
@@ -12,15 +15,17 @@ export interface Paciente{
     telefone: string;
     peso: number;
     altura: number;
-    nascimento: String;
+    nascimento: string;
+    sexo: string;
     tipoSanguinio: number;
     estadoMoradia: number;
     observacao: string;
 
+    medicamentos: Medicamento[];
     doencas: Doenca[];
     alergias: Alergia[];
     contatosDeEmergencias: ContatoDeEmergencia[];
-    medicamento: Medicamento[];
+    
 
 
 }
