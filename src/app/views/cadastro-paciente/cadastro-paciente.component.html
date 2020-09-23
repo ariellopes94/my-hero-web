@@ -1,3 +1,112 @@
-<p>cadastro-paciente works!</p>
+<div class="row container">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="cpf" type="text" class="validate">
+          <label for="cpf">Cpf</label>
+        </div>
 
-<button (click)="createPaciente()"> CRIAR PACIENTE</button>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input id="nome" type="tel" class="validate">
+          <label for="nome">Nome</label>
+        </div>
+
+        <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="email" type="tel" class="validate">
+            <label for="email">Email</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="senha" type="password" class="validate">
+            <label for="senha">Senha</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="doadorDeOrgao" type="tel" class="validate">
+            <label for="doadorDeOrgao">Doador De Orgao</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="telefone" type="tel" class="validate">
+            <label for="telefone">Telefone</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="peso" type="tel" class="validate">
+            <label for="peso">Peso</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="altura" type="tel" class="validate">
+            <label for="altura">Altura</label>
+          </div>
+
+          <!-- 
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="nascimento" type="tel" class="validate">
+            <label for="nascimento">Nascimento</label>
+          </div>
+        -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input type="text" id="nascimento" class="datepicker">
+            <label for="nascimento">Nascimento</label>
+          </div>
+
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="sexo" type="tel" class="validate">
+            <label for="sexo">Sexo</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="tipoSanguinio" type="tel" class="validate">
+            <label for="tipoSanguinio">Tipo Sanguinio</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <select>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label>Estado de Moradia</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="estadoMoradia" type="tel" class="validate">
+            <label for="estadoMoradia">Estado Moradia</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="observacao" type="tel" class="validate">
+            <label for="observacao">Observacao</label>
+          </div>
+
+        
+      </div>
+    </form>
+  </div>
+
+  <button (click)="createPaciente()" > CRIAR</button>
