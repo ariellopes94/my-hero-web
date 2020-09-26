@@ -20,6 +20,9 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { MultiselectDoencaComponent } from './multiselect/multiselect-doenca/multiselect-doenca.component';
 import { MultiselectMedicamentoComponent } from './multiselect/multiselect-medicamento/multiselect-medicamento.component';
 import { TelefoneDeContatosComponent } from './telefone-de-contatos/telefone-de-contatos.component';
+import { SimpleModalModule } from 'ngx-simple-modal';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
+import { EditarContatoEmergenciaModalComponent } from './editar-contato-emergencia-modal/editar-contato-emergencia-modal.component';
 
 PdfMakeWrapper.setFonts(pdfFonts);;
 
@@ -34,14 +37,17 @@ PdfMakeWrapper.setFonts(pdfFonts);;
     MultiselectDropdownComponent,
     MultiselectDoencaComponent,
     MultiselectMedicamentoComponent,
-    TelefoneDeContatosComponent
+    TelefoneDeContatosComponent,
+    ConfirmModalComponent,
+    EditarContatoEmergenciaModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AngularMultiSelectModule,
-    FormsModule
+    FormsModule,
+    SimpleModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

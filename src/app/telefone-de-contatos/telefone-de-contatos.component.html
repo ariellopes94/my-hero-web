@@ -1,136 +1,61 @@
+<div class="container">
 
-<div class="AddEmployeeTitleContainer">
-    <div class="addEmployeeTitleContainer">
-      <div >Add Employee</div>
-  </div>
-  <div class="addEmployeeBtnContainer">
-    <div class="addNewEmployeeBtn" (click)="addNewEmployeeBtn()">+</div>
-  </div>
-  </div>
-  
-  <div *ngIf="newEmployeeClicked">
-  <div class="formWrapper">
-  <form>
-    <div class="form-group name">
-      <!-- <label for="name">Name:</label> -->
-      <input type="text"
-             class="form-control input"
-             id="id"
-             name="id"
-             [(ngModel)]="model.id"
-             placeholder="id">
-    </div>
-    
-    {{ employees| json }}
-  
-     <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control positionInput"
-             id="nome"
-             name="nome"
-             [(ngModel)]="model.nome"
-             placeholder="nome">
-    </div>
-  
-    <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control positionInput"
-             id="paretesco"
-             name="paretesco"
-             [(ngModel)]="model.paretesco"
-             placeholder="paretesco">
-    </div>
-  
-    <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control positionInput"
-             id="numero"
-             name="numero"
-             [(ngModel)]="model.numero"
-             placeholder="numero">
-    </div>
-  
-  
-    <div class="submitBtnContainer">
-      <button type="submit" class="saveBtn" (click)="addEmployee()">SAVE</button>
-    </div>
-  </form>
-  </div>
-  </div>
-  
-  
-  <div class="tableWrapper">
-  <div class="containerTitle">
-    <div class="oneTitle">Id</div>
-    <div class="twoTitle">Nome</div>
-    <div class="oneTitle">Paretesco</div>
-    <div class="twoTitle">Numero</div>
-    <!-- <div class="four"></div> -->
-  </div>
-  
-  <div class="containerListItems" *ngFor="let employee of employees; let i = index" [style.background-color]="changeColorOne()">
-    <div class="one">{{employee.id}}</div>
-    <div class="two">{{employee.nome}}</div>
-    <div class="two">{{employee.paretesco}}</div>
-    <div class="two">{{employee.numero}}</div>
-    <div class="three">
-      <button (click)="editEmployee(i)">E</button>
-      <button (click)="deleteEmployee(i)">X</button>
-    </div>
-    <!-- <div class="four"></div> -->
-  </div>
-  </div>
-  
-  
-  
-  <div class="editEmployeeTitleContainer">
-    <div class="">Edit Employee</div>
-  </div>
-  
-  <form>
-    <div class="form-group name">
-      <!-- <label for="name">Name:</label> -->
-      <input type="text"
-             class="form-control"
-             id="id"
-             name="id"
-             [(ngModel)]="model2.id"
-             placeholder="Id">
-    </div>
-  
-     <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control"
-             id="nome"
-             name="nome"
-             [(ngModel)]="model2.nome"
-             placeholder="nome">
-    </div>
-  
-    <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control"
-             id="paretesco"
-             name="paretesco"
-             [(ngModel)]="model2.paretesco"
-             placeholder="paretesco">
-    </div>
-  
-    <div class="form-group position">
-      <!-- <label for="position">Position:</label> -->
-      <input type="text"
-             class="form-control"
-             id="numero"
-             name="numero"
-             [(ngModel)]="model2.numero"
-             placeholder="numero">
-    </div>
-  
-  
-    <button type="submit" (click)="updateEmployee()">Update</button>
-  </form>
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>
+
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="nome" name="nome" [(ngModel)]="model.nome" type="text" class="validate">
+                  <label for="nome">Nome</label>
+                </div>
+
+                <div class="input-field col s6">
+                  <input id="paretesco" name="paretesco" [(ngModel)]="model.paretesco" type="text" class="validate">
+                  <label for="paretesco">Paretesco</label>
+                </div>
+
+                <div class="input-field col s6">
+                  <input id="numero" name="numero" [(ngModel)]="model.numero" type="text" class="validate">
+                  <label for="numero">Numero</label>
+                </div>
+
+                <div class="col s6">
+                  <button class=" waves-light btn" (click)="addContato()"><i class="material-icons right">
+                      add</i>Adicionar</button>
+                </div>
+              </div>
+
+              <ul class="collection">
+                <li class="collection-item avatar" *ngFor="let contato of contatosDeEmergencias; let id = index">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Google_Contacts_logo.png" alt=""
+                    class="circle">
+                  <span class="title">{{contato.nome}}</span>
+                  <p>{{contato.paretesco}}<br>
+                    <a href={{contato.numero}}>{{contato.numero}}</a>
+                  </p>
+                  <td>
+
+                    <div class="col-sm-4">
+                      <button class="btn btn-default btn-block" (click)="editarContatos(id)">
+                        Editar
+                      </button>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <button class="btn btn-default btn-block" (click)="deletarConfirmar(id)">
+                        Excluir
+                      </button>
+                    </div>
+                  </td>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+        </span></div>
+    </li>
+  </ul>

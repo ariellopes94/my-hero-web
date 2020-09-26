@@ -1,0 +1,28 @@
+<div class="modal-content">
+    <div class="modal-header">
+   
+    </div>
+    <div class="modal-body">
+      <input id="nome"   name="nome" [(ngModel)]="nome" type="text">
+      <p>{{ nome || "Are you sure?" }}</p>
+    </div>
+
+    <div class="modal-body">
+      <input id="paretesco"   name="paretesco" [(ngModel)]="paretesco" type="text">
+      <p>{{ paretesco || "Are you sure?" }}</p>
+    </div>
+
+    <div class="modal-body">
+      <input id="numero"   name="numero" [(ngModel)]="numero" type="text">
+      <p>{{ numero || "Are you sure?" }}</p>
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" (click)="cancel()">
+        Cancel
+      </button>
+      <button type="button" class="btn btn-primary" (click)="confirm()">
+        OK
+      </button>
+    </div>
+  </div>
