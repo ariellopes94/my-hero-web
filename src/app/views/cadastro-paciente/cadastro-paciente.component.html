@@ -1,3 +1,20 @@
+
+
+
+<app-multiselect-alergia (alergiaOutput)="multiselectAlergia($event)"></app-multiselect-alergia>
+
+<app-multiselect-doenca (doencaOutput)="multiselectDoenca($event)"></app-multiselect-doenca>
+
+<app-multiselect-medicamento (medicamentoOutput)="multiselectMedicamento($event)"></app-multiselect-medicamento>
+ {{alergiasComponentMultiselect | json}}
+<br>
+<br>
+{{doencasComponentMultiselect | json}}
+<br>
+
+<br>
+{{medicamentosComponentMultiselect | json}}
+<br>
 <div class="row container">
     <form class="col s12">
       <div class="row">

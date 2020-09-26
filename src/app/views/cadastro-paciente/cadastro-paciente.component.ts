@@ -1,9 +1,8 @@
-import { Alergia } from './../../../models/alergia.model';
-import { Doenca } from './../../../models/doenca.model';
-import { ContatoDeEmergencia } from './../../../models/contatoDeEmergencia.model';
+
 import { PacienteService } from 'src/services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from 'src/models/paciente';
+import { Alergia } from 'src/models/alergia.model';
 
 @Component({
   selector: 'app-cadastro-paciente',
@@ -12,6 +11,9 @@ import { Paciente } from 'src/models/paciente';
 })
 export class CadastroPacienteComponent implements OnInit {
 
+  alergiasComponentMultiselect: Alergia [] = [];
+  doencasComponentMultiselect: Alergia [] = [];
+  medicamentosComponentMultiselect: Alergia [] = [];
 
   paciente: Paciente ={
 
@@ -62,4 +64,18 @@ export class CadastroPacienteComponent implements OnInit {
     })
   }
 
+  multiselectAlergia(alergiasSelecionadas):void{
+    this.alergiasComponentMultiselect = [];
+    this.alergiasComponentMultiselect.push(alergiasSelecionadas);
+  }
+  
+  multiselectDoenca(doencasSelecionados): void{
+    this.doencasComponentMultiselect = [];
+    this.doencasComponentMultiselect.push(doencasSelecionados);
+  }
+
+  multiselectMedicamento(medicamentosSelecionados): void{
+    this.medicamentosComponentMultiselect = [];
+    this.medicamentosComponentMultiselect.push(medicamentosSelecionados);
+  }
 }

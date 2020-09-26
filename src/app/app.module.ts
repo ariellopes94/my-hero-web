@@ -1,3 +1,5 @@
+import { MultiselectDropdownComponent } from './multiselect/multiselect-Alergia/multiselect-dropdown.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,7 +13,13 @@ import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { LoginComponent } from './views/login/login.component';
 import { PacienteComponent } from './views/paciente/paciente.component';
-import { CadastroPacienteComponent } from './views/cadastro-paciente/cadastro-paciente.component'; // fonts provided for pdfmake
+import { CadastroPacienteComponent } from './views/cadastro-paciente/cadastro-paciente.component';
+// fonts provided for pdfmake
+import { FormsModule } from '@angular/forms';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { MultiselectDoencaComponent } from './multiselect/multiselect-doenca/multiselect-doenca.component';
+import { MultiselectMedicamentoComponent } from './multiselect/multiselect-medicamento/multiselect-medicamento.component';
+import { TelefoneDeContatosComponent } from './telefone-de-contatos/telefone-de-contatos.component';
 
 PdfMakeWrapper.setFonts(pdfFonts);;
 
@@ -22,12 +30,18 @@ PdfMakeWrapper.setFonts(pdfFonts);;
     CartaoQrCodeComponent,
     LoginComponent,
     PacienteComponent,
-    CadastroPacienteComponent
+    CadastroPacienteComponent,
+    MultiselectDropdownComponent,
+    MultiselectDoencaComponent,
+    MultiselectMedicamentoComponent,
+    TelefoneDeContatosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMultiSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

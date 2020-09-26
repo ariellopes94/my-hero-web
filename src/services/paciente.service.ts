@@ -22,7 +22,7 @@ export class PacienteService {
     var numeroFichaPaciente : string = window.location.href;
 
     alert("TESTE" + numeroFichaPaciente);
-    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/5feddc03AHMy-HERO-af26AHMy-HERO-44aaAHMy-HERO-988fAHMy-HERO-b4b81991fee6`);
+    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/XTR700`);
   }
 
   gerarQrCode(): Observable<CartaoQrCode> {

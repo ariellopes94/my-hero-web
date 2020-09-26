@@ -52,6 +52,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/angular2-multiselect-dropdown/themes/default.theme.css",
               "node_modules/materialize-css/dist/css/materialize.css",
               "node_modules/material-design-icons-iconfont/dist/material-design-icons.css"
               
