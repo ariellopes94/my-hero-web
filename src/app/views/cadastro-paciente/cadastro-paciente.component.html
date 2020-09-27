@@ -1,5 +1,6 @@
 
-
+<h2>NEVWECD</h2>
+{{ alergiasComponentMultiselect | json }}
 
 <app-multiselect-alergia (alergiaOutput)="multiselectAlergia($event)"></app-multiselect-alergia>
 
@@ -15,109 +16,166 @@
 <br>
 {{medicamentosComponentMultiselect | json}}
 <br>
+
+<!--------CADASTRO DE CONTATOS-->
+<h1>
+   CONTAOS DE EMERGENCIAS </h1>
+ <h3> {{contatosEmergenciaModal | json }} </h3> 
+
+<div class="container">
+
+    <app-telefone-de-contatos (contatosDeEmergenciasOutput)="modalContatosEmergencias($event)"></app-telefone-de-contatos>
+
+</div>
+
+<hr><hr>
+ Paciente: <br>
+ {{paciente | json}}
+<hr>
 <div class="row container">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="cpf" type="text" class="validate">
+          <input id="cpf" type="text" [(ngModel)]="paciente.cpf" name="cpf" class="validate">
           <label for="cpf">Cpf</label>
         </div>
 
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input id="nome" type="tel" class="validate">
+          <input id="nome" type="tel" class="validate" [(ngModel)]="paciente.nome" name="nome">
           <label for="nome">Nome</label>
         </div>
 
         <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="email" type="tel" class="validate">
+            <input id="email" type="email" class="validate" [(ngModel)]="paciente.email" name="email">
             <label for="email">Email</label>
           </div>
 
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="senha" type="password" class="validate">
+            <input id="senha" type="password" class="validate"  [(ngModel)]="paciente.senha" name="senha">
             <label for="senha">Senha</label>
           </div>
 
+          <!--
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
             <input id="doadorDeOrgao" type="tel" class="validate">
             <label for="doadorDeOrgao">Doador De Orgao</label>
           </div>
+        -->
+
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <select [(ngModel)]="paciente.doadorDeOrgao" name="doadorDeOrgao">
+            <option value="" disabled selected >Doador De Orgao</option>
+            <option value="true">Sim</option>
+            <option value="false">Nao</option>
+          </select>
+          <label>Selecione um doador de orgao</label>
+        </div>
 
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="telefone" type="tel" class="validate">
+            <input id="telefone" type="tel" class="validate" [(ngModel)]="paciente.telefone" name="telefone">
             <label for="telefone">Telefone</label>
           </div>
-
+          
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="peso" type="tel" class="validate">
+            <input id="peso" type="tel" class="validate" [(ngModel)]="paciente.peso" name="peso">
             <label for="peso">Peso</label>
           </div>
 
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="altura" type="tel" class="validate">
+            <input id="altura" type="tel" class="validate"  [(ngModel)]="paciente.altura" name="altura">
             <label for="altura">Altura</label>
           </div>
 
-          <!-- 
-          <div class="input-field col s12">
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">Calendario</i>
+          <input id="nascimento" type="tel" class="validate"  [(ngModel)]="paciente.nascimento" name="nascimento">
+          <label for="nascimento">Nascimento</label>
+        </div>
+        
+          <!-- <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="nascimento" type="tel" class="validate">
+            <input type="text" id="nascimento" class="datepicker"  [(ngModel)]="paciente.nascimento" name="nascimento">
             <label for="nascimento">Nascimento</label>
           </div>
         -->
-          <div class="input-field col s12">
-            <i class="material-icons prefix">phone</i>
-            <input type="text" id="nascimento" class="datepicker">
-            <label for="nascimento">Nascimento</label>
-          </div>
-
-          
+         <!-- 
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
             <input id="sexo" type="tel" class="validate">
             <label for="sexo">Sexo</label>
           </div>
 
+          --> 
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <select [(ngModel)]="paciente.sexo" name="sexo">
+            <option value="" disabled selected>sexo</option>
+            <option value="MASCULINO">Masculino</option>
+            <option value="FEMININO">Fermino</option>
+          </select>
+          <label>Selecione sexo</label>
+        </div>
+
+        <!---
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
             <input id="tipoSanguinio" type="tel" class="validate">
             <label for="tipoSanguinio">Tipo Sanguinio</label>
           </div>
 
+        -->
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <select  [(ngModel)]="paciente.tipoSanguinio" name="tipoSanguinio">
+            <option value="" disabled selected>Tipo Sanguinio</option>
+            <option value="A_POSITIVO">A+</option>
+            <option value="A_NEGATIVO">A-</option>
+            <option value="B_POSITIVO">B+</option>
+            <option value="B_NEGATIVO">B-</option>
+            <option value="AB_POSITIVO">AB+</option>
+            <option value="AB_NEGATIVO">AB-</option>
+            <option value="O_POSITIVO">O+</option>
+            <option value="O_NEGATIVO">O-</option>
+          </select>
+          <label> Selecione Tipo Sanguinio</label>
+        </div>
+
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <select>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+            <select  [(ngModel)]="paciente.estadoMoradia" name="estadoMoradia">
+              <option value="" disabled selected>Seleciona estado</option>
+              <option value="ACRE">Acre</option>
+              <option value="ALAGOAS">Alagoas</option>
+              <option value="AMAPA">Amapá</option>
+              <option value="AMAZONAS">Amazonas</option>
+              <option value="BAHIA">Bahia</option>
+              <option value="CEARA">Ceará</option>
             </select>
             <label>Estado de Moradia</label>
           </div>
-
+          
+      <!--
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
             <input id="estadoMoradia" type="tel" class="validate">
             <label for="estadoMoradia">Estado Moradia</label>
           </div>
-
+ -->
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
-            <input id="observacao" type="tel" class="validate">
+            <input id="observacao" type="tel" class="validate" [(ngModel)]="paciente.observacao" name="observacao">
             <label for="observacao">Observacao</label>
           </div>
 

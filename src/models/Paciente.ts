@@ -4,7 +4,7 @@ import { ContatoDeEmergencia } from './contatoDeEmergencia.model';
 
 import { Doenca } from './doenca.model';
 
-export interface Paciente{
+export class Paciente{
 
     id?: number;
     cpf: string;
@@ -21,10 +21,10 @@ export interface Paciente{
     estadoMoradia: number;
     observacao: string;
 
-    medicamentos: Medicamento[];
-    doencas: Doenca[];
+    medicamentos: Medicamento[] = [];
+    doencas: Doenca[] = [];
     alergias: Alergia[];
-    contatosDeEmergencias: ContatoDeEmergencia[];
+    contatosDeEmergencias: ContatoDeEmergencia[] = [];
     
 
 

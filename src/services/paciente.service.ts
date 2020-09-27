@@ -21,8 +21,9 @@ export class PacienteService {
   fichaDoPaciente(): Observable<FichaPacienteDTO> {
     var numeroFichaPaciente : string = window.location.href;
 
-    alert("TESTE" + numeroFichaPaciente);
-    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/XTR700`);
+    alert("TESTE" + numeroFichaPaciente);     
+    return this.http.get <FichaPacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/a5f2c031XXMy-HERO-434eXXMy-HERO-4a97XXMy-HERO-a932XXMy-HERO-05b9efe81056`);
+    //XTR700
   }
 
   gerarQrCode(): Observable<CartaoQrCode> {

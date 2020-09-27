@@ -39,7 +39,7 @@ export class MultiselectDropdownComponent implements OnInit {
                           ];
       this.dropdownSettings = { 
                                 singleSelection: false, 
-                                text:"Select Countries",
+                                text:"Selecione Alergias",
                                 selectAllText:'Selecionar todos',
                                 unSelectAllText:'UnSelect All',
                                 enableSearchFilter: true,

@@ -39,7 +39,7 @@ export class MultiselectMedicamentoComponent implements OnInit {
                           ];
       this.dropdownSettings = { 
                                 singleSelection: false, 
-                                text:"Select Countries",
+                                text:"Selecione Medicamentos",
                                 selectAllText:'Selecionar todos',
                                 unSelectAllText:'UnSelect All',
                                 enableSearchFilter: true,

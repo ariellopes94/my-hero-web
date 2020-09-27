@@ -1,4 +1,5 @@
-import { Component, OnInit, Testability } from '@angular/core';
+import { ContatoDeEmergencia } from './../../models/contatoDeEmergencia.model';
+import { Component, EventEmitter, OnInit, Output, Testability } from '@angular/core';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { ConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
 import { EditarContatoEmergenciaModalComponent } from '../editar-contato-emergencia-modal/editar-contato-emergencia-modal.component';
@@ -13,11 +14,12 @@ export class TelefoneDeContatosComponent implements OnInit {
 
   idLinhaParaEdita: number;
 
+@Output() contatosDeEmergenciasOutput  = new EventEmitter<ContatoDeEmergencia[]>();
 
   contatosDeEmergencias = [
-    { id: '1', nome: 'Ariel', paretesco: 2, numero: "67991557455" },
+  /*  { id: '1', nome: 'Ariel', paretesco: 2, numero: "67991557455" },
     { id: '2', nome: 'Pedro', paretesco: 3, numero: "67991557455" },
-    { id: '3', nome: 'Daniel', paretesco: 3, numero: "67991557455" }
+    { id: '3', nome: 'Daniel', paretesco: 3, numero: "67991557455" } */
   ];
 
   constructor(private simpleModalService: SimpleModalService) { }
@@ -31,6 +33,9 @@ export class TelefoneDeContatosComponent implements OnInit {
 
   addContato() {
     this.contatosDeEmergencias.push(this.model);
+    
+    this.contatosDeEmergenciasOutput.emit(this.contatosDeEmergencias);
+
     this.model = {};
   }
 
@@ -60,6 +65,7 @@ export class TelefoneDeContatosComponent implements OnInit {
         for (let i = 0; i < this.contatosDeEmergencias.length; i++) {
           if (i == editEmployeeInfo) {
             this.contatosDeEmergencias[i] = this.model2;
+            
             this.model2 = {};
           }
         }
@@ -77,6 +83,10 @@ export class TelefoneDeContatosComponent implements OnInit {
         this.confirmResult = isConfirmed;
         if (this.confirmResult == true) {
           this.contatosDeEmergencias.splice(id, 1);
+
+          this.contatosDeEmergenciasOutput.emit(this.contatosDeEmergencias);
+
+         // this.contatosDeEmergenciasOutput.pu =  this.contatosDeEmergencias     //
         }
       });
   }

@@ -38,7 +38,7 @@ export class MultiselectDoencaComponent implements OnInit {
                           ];
       this.dropdownSettings = { 
                                 singleSelection: false, 
-                                text:"Select Countries",
+                                text:"Selecione Doencas",
                                 selectAllText:'Selecionar todos',
                                 unSelectAllText:'UnSelect All',
                                 enableSearchFilter: true,
