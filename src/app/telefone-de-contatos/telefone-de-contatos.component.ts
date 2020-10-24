@@ -1,4 +1,4 @@
-import { ContatoDeEmergencia } from './../../models/contatoDeEmergencia.model';
+ng simport { ContatoDeEmergencia } from './../../models/contatoDeEmergencia.model';
 import { Component, EventEmitter, OnInit, Output, Testability } from '@angular/core';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { ConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
@@ -33,7 +33,6 @@ export class TelefoneDeContatosComponent implements OnInit {
 
   addContato() {
     this.contatosDeEmergencias.push(this.model);
-    
     this.contatosDeEmergenciasOutput.emit(this.contatosDeEmergencias);
 
     this.model = {};
